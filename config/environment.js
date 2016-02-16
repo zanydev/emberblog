@@ -3,7 +3,19 @@
 module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'blog',
+
+    //nomenclature for pods
+    podModulePrefix: 'blog/features',
+
     environment: environment,
+    contentSecurityPolicy: { 'connect-src': "'self' https://auth.firebase.com wss://*.firebaseio.com" },
+    firebase: 'https://tomosoblog.firebaseio.com',
+
+    //Authentication with torii
+    torii: {
+      sessionServiceName: 'session'
+    },
+
     baseURL: '/',
     locationType: 'auto',
     EmberENV: {
